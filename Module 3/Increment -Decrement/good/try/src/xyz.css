@@ -1,0 +1,28 @@
+.xyz
+{
+    color: white;
+    font-size: 100px;
+    align-items: center;
+    background: rgb(31, 114, 142);
+}
+
+.dec
+{
+    font-size: 30px; 
+    
+    padding: 10px 20px
+}
+
+.inc
+{
+    font-size: 30px; 
+    
+    padding: 10px 20px
+}
+
+.res
+{
+    font-size: 30px; 
+    
+    padding: 10px 20px
+}
