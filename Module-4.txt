@@ -1,0 +1,45 @@
+Module – 4 Lists and Hooks
+
+Q. Explain Life cycle in Class Component and functional component with Hooks.
+
+Ans: The concept of a "life cycle" in React components refers to the various stages that a component goes through during its existence. In class components, you have access to a set of methods that are automatically called at different points in the component's life cycle. With the introduction of Hooks in functional components, you can achieve similar functionality by using built-in functions. Here's an overview of the life cycle in both class components and functional components with Hooks:
+
+Class Component Life Cycle:
+
+Mounting Phase:
+
+constructor(): This is the component's constructor method, where you can initialize state and bind event handlers.
+render(): This method returns the JSX representation of your component. It's called whenever the component needs to be re-rendered.
+After the initial render:
+
+componentDidMount(): This method is called once, immediately after the component is added to the DOM. It's commonly used for AJAX requests or setup that requires access to the DOM.
+
+
+Updating Phase:
+
+shouldComponentUpdate(nextProps,nextState): This method is used to determine if the component should re-render when its props or state change. You can optimize performance by returning false when unnecessary.
+render(): Called again to update the component's UI.
+componentDidUpdate(prevProps,prevState): This method is called after the component updates and the new DOM elements are in place. It's useful for side effects after an update, such as additional data fetching or UI updates.
+
+Unmounting Phase:
+
+componentWillUnmount(): This method is called just before the component is removed from the DOM. It's typically used for cleanup operations, such as removing event listeners.
+
+Functional Component with Hooks:
+
+With functional components and Hooks, you can achieve the same life cycle functionality. Here are the primary hooks to replicate the life cycle phases:
+
+Mounting Phase:
+
+useState(): To manage component state.
+useEffect(): This hook combines the functionality of componentDidMount and componentDidUpdate. You can perform side effects after rendering, such as data fetching, by providing a callback function as its argument.
+
+Updating Phase:
+
+You can use the same useEffect() hook to handle updates by providing a dependency array. It will run whenever the dependencies change.
+Optionally, you can use useMemo() and useCallback() to optimize performance by memoizing values and callbacks.
+
+Unmounting Phase:
+
+useEffect() with a cleanup function: You can return a function from the useEffect callback to handle cleanup when the component unmounts, similar to componentWillUnmount.
+
