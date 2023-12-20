@@ -1,0 +1,40 @@
+Module-7) React - Applying Redux
+
+Q.What is Redux?
+
+Ans:Redux is a state management library commonly used with JavaScript applications, particularly those built with libraries like React. It helps manage the state of an application in a predictable way, making it easier to develop and maintain large and complex applications.
+
+The core idea behind Redux is to maintain the state of your application in a single store, which is a plain JavaScript object. The state is modified by dispatching actions, which are plain JavaScript objects describing the change. Reducers are then used to specify how the state should change in response to these actions.
+
+Key concepts in Redux:
+
+Store: The store is a single JavaScript object that represents the state of the entire application. It is the source of truth for the application state.
+
+Action: An action is a plain JavaScript object that describes a change in the application state. Actions must have a type property that indicates the type of change to be performed. Additional data can be included in the action to provide information needed for the change.
+
+Reducer: A reducer is a pure function that takes the current state and an action as arguments and returns the next state of the application. Reducers specify how the state should change in response to actions.
+
+Dispatch: Dispatch is a method provided by the store to send actions to the reducer, triggering the state change. When an action is dispatched, the reducer is called, and the state is updated accordingly.
+
+Middleware: Middleware provides a way to extend the behavior of Redux. It sits between the action dispatch and the reducer and can be used for tasks like logging, asynchronous operations, and more.
+
+Redux is often used in conjunction with React, where the state managed by Redux can be easily connected to React components using the react-redux library. While Redux introduces some additional complexity, it can be particularly beneficial for large and complex applications, providing a clear and centralized way to manage state changes.
+
+
+Q.What is Redux Thunk used for?  
+
+Ans: Redux Thunk is a middleware for Redux that allows you to write action creators that return functions instead of plain action objects. This is particularly useful for handling asynchronous operations, such as API calls, in your Redux actions.
+
+By default, Redux actions are plain objects with a type property that describes the action and sometimes a payload property with additional data. However, when dealing with asynchronous operations, like fetching data from an API, you often need to dispatch multiple actions over a period of time (e.g., when the request is initiated, when it succeeds, and when it fails).
+
+
+Q.What is Pure Component? When to use Pure Component over Component?  
+
+Ans:A Pure Component in React is a type of component that only re-renders when its props or state change. They are also known as "stateless components" or "dumb components"
+Pure components optimize rendering performance by comparing props and state. They do not re-render when the value of state and props has been updated with the same values.
+Pure components are primarily used for performance optimization. You can use React.PureComponent for a performance boost in some cases if your React component's render() function renders the same result given the same props and state
+
+Q.What is the second argument that can optionally be passed tosetState and what is its purpose?  
+Ans: The second argument that can be optionally passed to setState is a callback function. This function is called immediately after the setState is completed and the components get re-rendered
+The callback function is executed after the state update has been applied and the component has re-rendered. For example, the setState callback function logs the message after the state has been updated with the data fetched from the server. 
+In most cases, componentDidUpdate should be used instead to apply such logic.
