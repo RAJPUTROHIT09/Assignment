@@ -34,6 +34,12 @@ Ans:A Pure Component in React is a type of component that only re-renders when i
 Pure components optimize rendering performance by comparing props and state. They do not re-render when the value of state and props has been updated with the same values.
 Pure components are primarily used for performance optimization. You can use React.PureComponent for a performance boost in some cases if your React component's render() function renders the same result given the same props and state
 
+Some examples of when to use PureComponent:
+
+When the component's output is only determined by its props and state, and there are no side effects.
+When the component receives complex data structures as props, and you can ensure that changes only occur at the top level, as PureComponent performs a shallow comparison.
+When the component is used in a list or other collection, and you want to avoid unnecessary re-renders of the entire list.
+
 Q.What is the second argument that can optionally be passed tosetState and what is its purpose?  
 Ans: The second argument that can be optionally passed to setState is a callback function. This function is called immediately after the setState is completed and the components get re-rendered
 The callback function is executed after the state update has been applied and the component has re-rendered. For example, the setState callback function logs the message after the state has been updated with the data fetched from the server. 
